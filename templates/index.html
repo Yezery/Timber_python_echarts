@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>木材网数据可视化</title>
+  </head>
+  <body>
+    <!-- 一、绘制页面 -->
+    <h1>木材网数据可视化</h1>
+    <div class="main">
+      <!-- 左 -->
+      <div class="main-left">
+        <div class="main-left-top">
+          <section style="margin-right: 8px;">
+            <h2>数据统计</h2>
+            <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+                <div style="font-size: 1.3rem;margin-bottom: 2rem;">木材数据量：{{ data.data_total }} 条</div>
+                <div style="font-size: 1.3rem;margin-bottom: 2rem;">木材来源地数量：{{ data.location_num }} 个</div>
+                <div style="font-size: 1.3rem;margin-bottom: 2rem;">木材类型数量：{{ data.type_num }} 个</div>
+                <div style="font-size: 1.3rem;">数据更新时间：{{ data.update_time}}</div>
+            </div>
+          </section>
+
+          <section style="margin-left: 8px;">
+            <h2>木材来源</h2>
+            <div id="chart5"></div>
+          </section>
+        </div>
+
+        <section>
+          <h2>木材价格走势 <span style="font-size: 15px;" id="current_name"></span></h2>
+         <div style="height: 20px;z-index: 10;position: absolute; right: 0;display: flex; justify-content: center;align-items: center;margin-top: 25px; margin-right: 50px;">
+            <input type="search" placeholder="请输入木材种类" id="search" style="float: right;padding: 10px; border-radius: 6px;border: 1px solid #ccc;"/>
+            <input type="search" placeholder="请输入木材来源地" id="search2" style="float: right;padding: 10px; border-radius: 6px;border: 1px solid #ccc;margin-left: 10px;"/>
+            <input type="search" placeholder="请输入木材级别" id="search3" style="float: right;padding: 10px; border-radius: 6px;border: 1px solid #ccc;margin-left: 10px;"/>
+            <button style="margin-left: 10px;padding: 8px;background-color: white; border-radius: 4px;border: 1px solid #ccc;padding-left: 20px;padding-right: 20px;cursor: pointer;" onclick="search()">查询</button>
+         </div>
+          <div id="chart3"></div>
+        </section>
+      </div>
+      <!-- 右 -->
+      <div class="main-right">
+        <section style="margin-bottom: 16px;">
+          <h2>木材种类占比</h2>
+          <div id="chart2"></div>
+        </section>
+        <section>
+          <h2>木材品质占比</h2>
+          <div id="chart6"></div>
+        </section>
+      </div>
+    </div>
+    <!-- 引入css文件 -->
+    <link rel="stylesheet" href={{ url_for('static',filename='css/index.css') }} />
+    <!-- 引入echarts画图表 -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/echarts.min.js') }}"></script>
+    <!-- 年龄分布 -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/chart1.js') }}"></script>
+    <!-- 流量来源 -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/chart2.js') }}"></script>
+    <!-- 文章阅读次数 -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/chart3.js') }}"></script>
+    <!-- 公众号关注性别 -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/chart4.js') }}"></script>
+    <!-- 渠道构成 -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/chart5.js') }}"></script>
+  </body>
+</html>

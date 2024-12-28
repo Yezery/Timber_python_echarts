@@ -1,0 +1,99 @@
+/* 所有标签都清楚内外边距 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f3f5;
+}
+/* 标题 */
+h1 {
+  /* 清楚h2标签的外边距 */
+  margin: 0;
+  /* 设置高度和行高的值一样就垂直居中了 */
+  height: 70px;
+  line-height: 70px;
+  /* 在设置标题水平居中 */
+  text-align: center;
+  /* 文字间距 */
+  letter-spacing: 5px;
+}
+/* 主容器 */
+.main {
+  width: 100%;
+  /* 标题高度是70px 剩下图表的高度就是总体减去70px */
+  height: calc(100% - 70px);
+  /* 设置内边距 上 右 下 左*/
+  padding: 0 15px 15px 15px;
+  /* 把主容器变成弹性的 这样左容器和右容器就在一行了 */
+  display: flex;
+  /* 可以竖向滚动 不能横向滚动 */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/* 左容器 */
+.main-left {
+  /* 左容器占三分之二 */
+  width: 66%;
+  height: 100%;
+  /* 和右容器有15px的空隙 */
+  margin-right: 15px;
+}
+/* 左容器 上部分 */
+.main-left-top {
+  width: 100%;
+  height: calc(50% - 7.5px);
+  /* 把左容器上部分变成弹性的 这样左容器上部分的两个图表就在一行了 */
+  display: flex;
+  /* 和左容器下部分有15px的空隙 */
+  margin-bottom: 15px;
+}
+/* 右容器 */
+.main-right {
+  /* 右容器占三分之一 */
+  width: 34%;
+  height: 100%;
+}
+/* 左容器 上部分的图表都占100% */
+.main-left-top section {
+  height: 100%;
+}
+/* 图表 */
+section {
+  width: 100%;
+  /* 都是占50% 因为有15px的空隙 高度就各减一半 就是7.5 */
+  height: calc(50% - 7.5px);
+  /* 背景白色 */
+  background-color: #fff;
+  /* 圆角 */
+  border-radius: 5px;
+  /* 设置位置方式 */
+  position: relative;
+}
+/* 图表的标题 */
+section h2 {
+  /* 清楚h2标签的外边距 */
+  margin: 0;
+  /* 设置高度和行高的值一样就垂直居中了 */
+  height: 50px;
+  line-height: 50px;
+  /* 字体大小 */
+  font-size: 17px;
+  /* 颜色 */
+  color: #2a4357;
+  /* 根据父级的section来定义标题的位置 */
+  position: absolute;
+  /* 位置靠左0 靠上20px */
+  top: 0;
+  left: 20px;
+  /* 居左 */
+  text-align: left;
+}
+/* 图表里的div高度都是100% */
+section > div {
+  height: 100%;
+}

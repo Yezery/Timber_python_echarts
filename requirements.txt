@@ -1,0 +1,4 @@
+selenium
+pandas
+flask
+flask_cors
