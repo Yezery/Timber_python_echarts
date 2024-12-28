@@ -1,11 +1,3 @@
-配置 conda 解释器环境
-
-pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple -r requirements.txt
-
-然后运行 python api.py
-
-在浏览器打开 127.0.0.1:5000
-
 <div align="center">
     <h1>木材网自动化爬虫+数据可视化</h1>
 	<h3>python 				flask				 echarts 				selenium</h3>
@@ -69,4 +61,3 @@ pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple -r requireme
 <div align="center">
 	<p>༼ つ ◕_◕ ༽つ   File design By <b>ZivYe</b></p>
 </div>
-
